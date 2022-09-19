@@ -17,6 +17,8 @@ export default function index() {
                   <th scope="col">Father Name</th>
 
                   <th scope="col">Address</th>
+
+                  <th scope="col">Price</th>
                 </tr>
               </thead>
               <tbody>
