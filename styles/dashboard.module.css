@@ -1,0 +1,107 @@
+.sidebar_wrapper {
+  border: 1px solid #ddd;
+  padding: 20px 20px;
+  background-color: rgb(8, 91, 174);
+  min-height: 100vh;
+  min-width: 225px;
+}
+.sidebar {
+  margin-bottom: 40px;
+  padding: 10px 20px;
+  width: 100%;
+
+  color: white;
+  cursor: pointer;
+}
+.sidebar:hover {
+  background-color: rgb(215, 216, 250);
+  border-radius: 10px;
+  color: black;
+  padding: 10px;
+}
+.dashboard_wrapper {
+  background-color: rgb(234, 242, 242);
+  padding: 50px 30px;
+  min-height: 100vh;
+}
+.trooms {
+  border: 1px solid yellow;
+  background-color: yellow;
+  padding: 30px 20px;
+  width: 70%;
+  border-radius: 10px;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+.erooms {
+  border: 1px solid rgb(36, 190, 210);
+  background-color: rgb(36, 190, 210);
+  padding: 30px 20px;
+  width: 70%;
+  border-radius: 10px;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+.tstudent {
+  border: 1px solid rgb(239, 167, 128);
+  background-color: rgb(239, 167, 128);
+  padding: 30px 20px;
+  width: 70%;
+  border-radius: 10px;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+.boys {
+  border: 1px solid rgb(239, 105, 105);
+  background-color: rgb(239, 105, 105);
+  padding: 30px 20px;
+  width: 70%;
+  border-radius: 10px;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+.girls {
+  border: 1px solid rgb(155, 244, 240);
+  background-color: rgb(155, 244, 240);
+  padding: 30px 20px;
+  width: 70%;
+  border-radius: 10px;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+.newStudent_wrapper {
+  padding: 50px 40px;
+}
+.newStudent_form {
+  border: 1px solid #ddd;
+  padding: 30px 20px;
+  border-radius: 10px;
+}
+.home_table {
+  padding: 60px 30px;
+}
+.table {
+  border: 1px solid #ddd;
+}
+.img_wrapper
+{
+  position: relative;
+  width: 70px;
+  height: 70px;
+ margin-right: 5px;
+ justify-content: center;
+ align-items: center;
+}
+.header_name
+{
+  border-bottom: 2px solid #ddd;
+  width: 100%;
+  margin-bottom: 15px;
+  color: #ddd;
+  cursor: pointer;
+}
