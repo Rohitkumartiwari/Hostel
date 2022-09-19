@@ -35,7 +35,7 @@ export default function index() {
                   return (
                     <tr>
                       <th scope="row" key={index}>
-                        {index}
+                        {index + 1}
                       </th>
                       <td className="d-flex">
                         <div className={Styles.img_wrapper}>

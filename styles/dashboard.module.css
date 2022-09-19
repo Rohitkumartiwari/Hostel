@@ -84,6 +84,8 @@
 }
 .home_table {
   padding: 60px 30px;
+  overflow: hidden;
+  overflow-x: scroll;
 }
 .table {
   border: 1px solid #ddd;

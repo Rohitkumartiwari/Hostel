@@ -15,7 +15,7 @@ const dashboard = () => {
   return (
     <div className={Styles.sidebar_wrapper}>
       <div className={Styles.header_name} onClick={() => router.push("/")}>
-        <h3 className="text-white text-center mb-3">RamarWati</h3>
+        <h4 className="text-white text-center mb-3">RamarWati Hostel</h4>
       </div>
 
       <div className={Styles.sidebar} onClick={() => router.push("/dashboard")}>
