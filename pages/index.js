@@ -4,6 +4,10 @@ import Styles from "../styles/dashboard.module.css";
 import Images from "next/image";
 import img1 from "../public/1.jpg";
 import axios from "axios";
+import { FcFullTrash } from "react-icons/fc";
+import { GoTrashcan } from "react-icons/go";
+import { FiEdit } from "react-icons/fi";
+
 export default function index() {
   const [data, setData] = useState([]);
   useEffect(() => {
@@ -12,6 +16,14 @@ export default function index() {
       .then((res) => setData(res.data));
   }, []);
   console.log(data);
+  const del = (id) => {
+    const newData = data.filter((a) => a._id !== id);
+    setData(newData);
+    axios
+      .delete(`https://apis-new.onrender.com/users/${id}`)
+      .then((res) => console.log(res));
+  };
+  const edit = () => {};
   return (
     <div className="container">
       <div className="row">
@@ -28,15 +40,14 @@ export default function index() {
                   <th scope="col">Mobile</th>
 
                   <th scope="col">Price</th>
+                  <th scope="col">Delete</th>
                 </tr>
               </thead>
               <tbody>
                 {data.map((data, index) => {
                   return (
-                    <tr>
-                      <th scope="row" key={index}>
-                        {index + 1}
-                      </th>
+                    <tr key={index}>
+                      <th scope="row">{index + 1}</th>
                       <td className="d-flex">
                         <div className={Styles.img_wrapper}>
                           <Images
@@ -50,6 +61,20 @@ export default function index() {
                       <td>{data.FathersName}</td>
                       <td>{data.mobile}</td>
                       <td>{data.price}</td>
+                      <td>
+                        <div
+                          onClick={() => del(data._id)}
+                          className="cursor-pointer"
+                        >
+                          <GoTrashcan fontSize={25}></GoTrashcan>
+                        </div>
+                        {/* <div
+                          onClick={() => edit(data._id)}
+                          className="cursor-pointer"
+                        >
+                          <FiEdit fontSize={25}></FiEdit>
+                        </div> */}
+                      </td>
                     </tr>
                   );
                 })}

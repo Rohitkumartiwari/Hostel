@@ -4,6 +4,12 @@
   background-color: rgb(8, 91, 174);
   min-height: 100vh;
   min-width: 225px;
+  /* position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  flex-wrap: wrap; */
+
 }
 .sidebar {
   margin-bottom: 40px;
