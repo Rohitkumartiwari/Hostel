@@ -10,18 +10,13 @@ import {
 } from "react-icons/fc";
 const dashboard = () => {
   const router = useRouter();
+
   return (
     <div className={Styles.sidebar_wrapper}>
-      <div className={Styles.sidebar} onClick={() => router.push("/")}>
-        <div className="row ">
-          <div className="d-flex justify-content-between">
-            <span>
-              <FcDatabase fontSize={25} />
-            </span>
-            <h5>Home</h5>
-          </div>
-        </div>
+      <div className={Styles.header_name} onClick={() => router.push("/")}>
+        <h4 className="text-white text-center mb-3">RamarWati Hostel</h4>
       </div>
+
       <div className={Styles.sidebar} onClick={() => router.push("/dashboard")}>
         <div className="row ">
           <div className="d-flex justify-content-between">
@@ -29,6 +24,16 @@ const dashboard = () => {
               <FcRules fontSize={25} />
             </span>
             <h5>Dashboard</h5>
+          </div>
+        </div>
+      </div>
+      <div className={Styles.sidebar} onClick={() => router.push("/")}>
+        <div className="row ">
+          <div className="d-flex justify-content-between">
+            <span>
+              <FcDatabase fontSize={25} />
+            </span>
+            <h5>Detail</h5>
           </div>
         </div>
       </div>
@@ -42,7 +47,7 @@ const dashboard = () => {
             <span>
               <FcConferenceCall fontSize={25} />
             </span>
-            <h5>New Student</h5>
+            <h5>Add New </h5>
           </div>
         </div>
       </div>

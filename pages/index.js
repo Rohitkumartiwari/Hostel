@@ -2,7 +2,6 @@ import Head from "next/head";
 import React, { useState, useEffect } from "react";
 import Styles from "../styles/dashboard.module.css";
 import Images from "next/image";
-
 import axios from "axios";
 import { FcFullTrash } from "react-icons/fc";
 import { GoTrashcan } from "react-icons/go";
