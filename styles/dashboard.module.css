@@ -30,8 +30,8 @@
   min-height: 100vh;
 }
 .trooms {
-  border: 1px solid yellow;
-  background-color: yellow;
+  border: 1px solid white;
+  background-color: white;
   padding: 30px 20px;
   width: 70%;
   border-radius: 10px;
@@ -40,8 +40,8 @@
   margin-bottom: 50px;
 }
 .erooms {
-  border: 1px solid rgb(36, 190, 210);
-  background-color: rgb(36, 190, 210);
+  border: 1px solid white;
+  background-color: white;
   padding: 30px 20px;
   width: 70%;
   border-radius: 10px;
@@ -50,8 +50,8 @@
   margin-bottom: 50px;
 }
 .tstudent {
-  border: 1px solid rgb(239, 167, 128);
-  background-color: rgb(239, 167, 128);
+  border: 1px solid white;
+  background-color: white;
   padding: 30px 20px;
   width: 70%;
   border-radius: 10px;
@@ -60,8 +60,8 @@
   margin-bottom: 50px;
 }
 .boys {
-  border: 1px solid rgb(239, 105, 105);
-  background-color: rgb(239, 105, 105);
+  border: 1px solid white;
+  background-color: white;
   padding: 30px 20px;
   width: 70%;
   border-radius: 10px;
@@ -70,8 +70,8 @@
   margin-bottom: 50px;
 }
 .girls {
-  border: 1px solid rgb(155, 244, 240);
-  background-color: rgb(155, 244, 240);
+  border: 1px solid white;
+  background-color: white;
   padding: 30px 20px;
   width: 70%;
   border-radius: 10px;
