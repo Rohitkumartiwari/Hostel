@@ -4,6 +4,11 @@
   background-color: rgb(8, 91, 174);
   min-height: 100vh;
   min-width: 225px;
+  /* position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  flex-wrap: wrap; */
 }
 .sidebar {
   margin-bottom: 40px;
@@ -84,7 +89,24 @@
 }
 .home_table {
   padding: 60px 30px;
+  overflow: hidden;
+  overflow-x: scroll;
 }
 .table {
   border: 1px solid #ddd;
+}
+.img_wrapper {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  margin-right: 5px;
+  justify-content: center;
+  align-items: center;
+}
+.header_name {
+  border-bottom: 2px solid #ddd;
+  width: 100%;
+  margin-bottom: 15px;
+  color: #ddd;
+  cursor: pointer;
 }
