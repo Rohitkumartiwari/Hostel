@@ -62,7 +62,7 @@ export default function index() {
 
                   <th scope="col">Price</th>
                   <th scope="col">Date</th>
-                  <th scope="col">Delete</th>
+                  <th scope="col">Actions</th>
                 </tr>
               </thead>
               <tbody>
