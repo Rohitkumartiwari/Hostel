@@ -17,7 +17,7 @@ const dashboard = () => {
   return (
     <div>
       <div className={Styles.dashboard_wrapper}>
-        <h3 className=" mb-5">Dashboard</h3>
+        <h3 className=" mb-5 text-center">Dashboard</h3>
         <div className="row">
           <div className="col-md-4 d-flex justify-content-center">
             <div className={`${Styles.trooms} d-flex justify-content-between`}>

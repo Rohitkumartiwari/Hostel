@@ -26,7 +26,7 @@ const dashboard = () => {
         <div className="row ">
           <div className="d-flex justify-content-between">
             <span>
-              <FcRules fontSize={25} />
+              <FcRules fontSize={35} />
             </span>
             <h5>Dashboard</h5>
           </div>
@@ -36,7 +36,7 @@ const dashboard = () => {
         <div className="row ">
           <div className="d-flex justify-content-between">
             <span>
-              <FcDatabase fontSize={25} />
+              <FcDatabase fontSize={35} />
             </span>
             <h5>Detail</h5>
           </div>
@@ -50,7 +50,7 @@ const dashboard = () => {
         <div className="row ">
           <div className="d-flex justify-content-between">
             <span>
-              <FcConferenceCall fontSize={25} />
+              <FcConferenceCall fontSize={35} />
             </span>
             <h5>Add New </h5>
           </div>
@@ -60,7 +60,7 @@ const dashboard = () => {
         <div className="row ">
           <div className="d-flex justify-content-between">
             <span>
-              <FcPuzzle fontSize={25} />
+              <FcPuzzle fontSize={35} />
             </span>
             <h5>Update</h5>
           </div>
