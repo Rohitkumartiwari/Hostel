@@ -7,6 +7,7 @@ import {
   FcRules,
   FcConferenceCall,
   FcPuzzle,
+  FcHome,
 } from "react-icons/fc";
 const dashboard = () => {
   const router = useRouter();
@@ -14,7 +15,11 @@ const dashboard = () => {
   return (
     <div className={Styles.sidebar_wrapper}>
       <div className={Styles.header_name} onClick={() => router.push("/")}>
-        <h4 className="text-white text-center mb-3">RamarWati Hostel</h4>
+        <h4 className="text-white text-center mb-3">
+          <span>
+            <FcHome fontSize={75} />
+          </span>
+        </h4>
       </div>
 
       <div className={Styles.sidebar} onClick={() => router.push("/dashboard")}>
