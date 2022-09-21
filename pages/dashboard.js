@@ -19,7 +19,7 @@ const dashboard = () => {
       <div className={Styles.dashboard_wrapper}>
         <h3 className=" mb-5">Dashboard</h3>
         <div className="row">
-          <div className="col-md-4">
+          <div className="col-md-4 d-flex justify-content-center">
             <div className={`${Styles.trooms} d-flex justify-content-between`}>
               <span>
                 <BiBuildingHouse fontSize={35} />
@@ -30,7 +30,7 @@ const dashboard = () => {
           {value.map((a) => {
             return (
               <>
-                <div className="col-md-4">
+                <div className="col-md-4 d-flex justify-content-center">
                   <div
                     className={`${Styles.erooms} d-flex justify-content-between`}
                   >
@@ -40,7 +40,7 @@ const dashboard = () => {
                     Empty Rooms {a.emptyRooms}
                   </div>
                 </div>
-                <div className="col-md-4">
+                <div className="col-md-4 d-flex justify-content-center">
                   <div
                     className={`${Styles.tstudent} d-flex justify-content-between`}
                   >
@@ -50,7 +50,7 @@ const dashboard = () => {
                     Total Persons {a.totalPersons}
                   </div>
                 </div>
-                <div className="col-md-4">
+                <div className="col-md-4 d-flex justify-content-center">
                   <div
                     className={`${Styles.boys} d-flex justify-content-between`}
                   >
@@ -60,7 +60,7 @@ const dashboard = () => {
                     Total Boys {a.totalBoys}
                   </div>
                 </div>
-                <div className="col-md-4">
+                <div className="col-md-4 d-flex justify-content-center">
                   <div
                     className={`${Styles.girls} d-flex justify-content-between`}
                   >
