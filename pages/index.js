@@ -6,15 +6,24 @@ import axios from "axios";
 import { FcFullTrash } from "react-icons/fc";
 import { GoTrashcan } from "react-icons/go";
 import { FiEdit } from "react-icons/fi";
-
+import { Button, Modal, ModalFooter, ModalHeader, ModalBody } from "reactstrap";
 export default function index() {
   const [data, setData] = useState([]);
+  const [modal, setModal] = React.useState(false);
+  const [info, setInfo] = useState([]);
+  const [name, setName] = useState();
+  const [fname, setFName] = useState("");
+  const [mobile, setMobile] = useState();
+  const [address, setAddress] = useState();
+  const [image, setImage] = useState();
+  const [price, setPrice] = useState();
+  const toggle = () => setModal(!modal);
   useEffect(() => {
     axios
       .get("https://apis-new.onrender.com/users")
       .then((res) => setData(res.data));
   }, []);
-  console.log(data);
+
   const del = (id) => {
     const newData = data.filter((a) => a._id !== id);
     setData(newData);
@@ -22,8 +31,20 @@ export default function index() {
       .delete(`https://apis-new.onrender.com/users/${id}`)
       .then((res) => console.log(res));
   };
-  // const date = new Date().toLocaleDateString();
-  // console.log(date);
+
+  console.log(info);
+  const click = () => {
+    let formData = new FormData();
+    formData.append("name", info.name);
+    formData.append("FathersName", info.FathersName);
+    formData.append("mobile", info.mobile);
+    formData.append("address", info.address);
+    formData.append("image", info.image);
+    formData.append("price", parseInt(info.price));
+    axios
+      .put(`https://apis-new.onrender.com/users/${info._id}`, formData)
+      .then((res) => console.log(res.data));
+  };
   return (
     <div className="container">
       <div className="row">
@@ -45,7 +66,7 @@ export default function index() {
                 </tr>
               </thead>
               <tbody>
-                {data.map((data, index) => {
+                {(data ? data : []).map((data, index) => {
                   return (
                     <tr key={index}>
                       <th scope="row">{index + 1}</th>
@@ -70,29 +91,110 @@ export default function index() {
                         >
                           <GoTrashcan fontSize={25}></GoTrashcan>
                         </div>
-                        {/* <div
-                          onClick={() => edit(data._id)}
+                        <div
+                          onClick={() => {
+                            setInfo(data);
+                            toggle();
+                          }}
                           className="cursor-pointer"
                         >
                           <FiEdit fontSize={25}></FiEdit>
-                        </div> */}
+                        </div>
                       </td>
                     </tr>
                   );
                 })}
-                {/* <tr>
-                  <th scope="row">1</th>
-                  <td className="d-flex">
-                    <div className={Styles.img_wrapper}>
-                      <Images src={img1} objectFit="cover" layout="fill" />
-                    </div>
-                    <span>Mark</span>{" "}
-                  </td>
-                  <td>@fat</td>
-                  <td>sln</td>
-                  <td>2500</td>
-                </tr> */}
               </tbody>
+              <Modal
+                isOpen={modal}
+                toggle={toggle}
+                info={info}
+                modalTransition={{ timeout: 2000 }}
+              >
+                <ModalHeader>Simple Modal with just ModalHeader...</ModalHeader>
+                <ModalBody>
+                  <div className="col-md-8 mx-auto">
+                    <div className={Styles.newStudent_form}>
+                      <div class="form-group">
+                        <label className="mb-2">Name</label>
+                        <input
+                          type="text"
+                          className="form-control"
+                          id="name"
+                          value={info.name}
+                          onChange={(e) =>
+                            setInfo({ ...info, name: e.target.value })
+                          }
+                        />
+                      </div>
+
+                      <label className="mb-2">Fathers Name</label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        id="mobile"
+                        value={info.FathersName}
+                        onChange={(e) =>
+                          setInfo({ ...info, FathersName: e.target.value })
+                        }
+                      />
+
+                      <label className="mb-2">Mobile</label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        id="mobile"
+                        value={info.mobile}
+                        onChange={(e) =>
+                          setInfo({ ...info, mobile: e.target.value })
+                        }
+                      />
+                      <label className="mb-2">Price</label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        id="price"
+                        value={info.price}
+                        onChange={(e) =>
+                          setInfo({ ...info, price: e.target.value })
+                        }
+                      />
+
+                      <label className="mb-2">Address</label>
+                      <textarea
+                        className="form-control mb-2"
+                        id="address"
+                        rows="3"
+                        value={info.address}
+                        onChange={(e) =>
+                          setInfo({ ...info, address: e.target.value })
+                        }
+                      ></textarea>
+
+                      <label className="mb-2">Student Image</label>
+                      <br />
+                      <input
+                        type="file"
+                        className="form-control-file mb-3"
+                        id="image"
+                        onChange={(e) =>
+                          setInfo({ ...info, image: e.target.files[0] })
+                        }
+                      />
+                      <br />
+                      <div className="d-flex justify-content-center ">
+                        <button
+                          type="button"
+                          className="btn btn-secondary btn-md "
+                          onClick={click}
+                        >
+                          Submit
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </ModalBody>
+              </Modal>
             </table>
           </div>
         </div>
