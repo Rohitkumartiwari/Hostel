@@ -40,6 +40,7 @@ export default function index() {
     formData.append("address", info.address);
     formData.append("image", info.image);
     formData.append("price", parseInt(info.price));
+    formData.append("date", info.date);
     axios
       .put(`https://apis-new.onrender.com/users/${info._id}`, formData)
       .then((res) => {
@@ -123,7 +124,7 @@ export default function index() {
                           type="text"
                           className="form-control"
                           id="name"
-                          value={info.name}
+                          value={info?.name}
                           onChange={(e) =>
                             setInfo({ ...info, name: e.target.value })
                           }
@@ -135,7 +136,7 @@ export default function index() {
                         type="text"
                         className="form-control"
                         id="mobile"
-                        value={info.FathersName}
+                        value={info?.FathersName}
                         onChange={(e) =>
                           setInfo({ ...info, FathersName: e.target.value })
                         }
@@ -146,7 +147,7 @@ export default function index() {
                         type="text"
                         className="form-control"
                         id="mobile"
-                        value={info.mobile}
+                        value={info?.mobile}
                         onChange={(e) =>
                           setInfo({ ...info, mobile: e.target.value })
                         }
@@ -156,18 +157,27 @@ export default function index() {
                         type="text"
                         className="form-control"
                         id="price"
-                        value={info.price}
+                        value={info?.price}
                         onChange={(e) =>
                           setInfo({ ...info, price: e.target.value })
                         }
                       />
-
+                      <label className="mb-2">Joining Date</label>
+                      <input
+                        type="date"
+                        className="form-control"
+                        id="date"
+                        value={info?.date}
+                        onChange={(e) =>
+                          setInfo({ ...info, date: e.target.value })
+                        }
+                      />
                       <label className="mb-2">Address</label>
                       <textarea
                         className="form-control mb-2"
                         id="address"
                         rows="3"
-                        value={info.address}
+                        value={info?.address}
                         onChange={(e) =>
                           setInfo({ ...info, address: e.target.value })
                         }
