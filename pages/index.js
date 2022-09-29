@@ -8,7 +8,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { GoTrashcan } from "react-icons/go";
 import { FiEdit } from "react-icons/fi";
 import { Button, Modal, ModalFooter, ModalHeader, ModalBody } from "reactstrap";
-
+import Moment from "react-moment";
 export default function index() {
   const [data, setData] = useState([]);
   const [modal, setModal] = React.useState(false);
@@ -88,7 +88,9 @@ export default function index() {
                       <td>{data.FathersName}</td>
                       <td>{data.mobile}</td>
                       <td>{data.price}</td>
-                      <td>{new Date().toLocaleDateString()}</td>
+                      <td>
+                        <Moment format="YYYY/MM/DD">{data.date}</Moment>
+                      </td>
                       <td>
                         <div
                           onClick={() => del(data._id)}

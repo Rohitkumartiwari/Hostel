@@ -9,6 +9,7 @@ const newStudent = () => {
   const [image, setImage] = useState();
   const [price, setPrice] = useState();
   const [data, setData] = useState();
+  const [date, setDate] = useState();
   const [message, setMessage] = useState(null);
   useEffect(() => {
     axios.get("https://apis-new.onrender.com/users").then((res) => {
@@ -22,6 +23,7 @@ const newStudent = () => {
     formData.append("mobile", mobile);
     formData.append("address", address);
     formData.append("image", image);
+    formData.append("date", date);
     formData.append("price", parseInt(price));
     axios.post("https://apis-new.onrender.com/users", formData).then((res) => {
       setData(res.data);
@@ -68,6 +70,14 @@ const newStudent = () => {
                   id="mobile"
                   value={mobile}
                   onChange={(e) => setMobile(e.target.value)}
+                />
+                <label className="mb-2">Joining Date</label>
+                <input
+                  type="date"
+                  className="form-control"
+                  id="date"
+                  value={date}
+                  onChange={(e) => setDate(e.target.value)}
                 />
                 <label className="mb-2">Price</label>
                 <input
