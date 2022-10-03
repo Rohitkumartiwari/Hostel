@@ -10,6 +10,7 @@ const newStudent = () => {
   const [price, setPrice] = useState();
   const [data, setData] = useState();
   const [date, setDate] = useState();
+  const [gender, setGender] = useState();
   const [message, setMessage] = useState(null);
   useEffect(() => {
     axios.get("https://apis-new.onrender.com/users").then((res) => {
@@ -24,6 +25,7 @@ const newStudent = () => {
     formData.append("address", address);
     formData.append("image", image);
     formData.append("date", date);
+    formData.append("gender", gender);
     formData.append("price", parseInt(price));
     axios.post("https://apis-new.onrender.com/users", formData).then((res) => {
       setData(res.data);
@@ -62,7 +64,16 @@ const newStudent = () => {
                   value={fname}
                   onChange={(e) => setFName(e.target.value)}
                 />
-
+                <label className="mb-2">Gender</label>
+                <select
+                  class="form-select"
+                  aria-label="Default select example"
+                  onChange={(e) => setGender(e.target.value)}
+                >
+                  <option selected>Select Gender</option>
+                  <option value="1">Male</option>
+                  <option value="2">Female</option>
+                </select>
                 <label className="mb-2">Mobile</label>
                 <input
                   type="text"
