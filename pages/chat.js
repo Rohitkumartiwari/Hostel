@@ -19,13 +19,13 @@ const chat = () => {
     appId: "1:657153112974:web:969b8e5b71ada11938c2df",
     measurementId: "G-YFBWWCX231",
   };
-  const app = initializeApp(firebaseConfig);
-  // Initialize Firebase
-  const db = getDatabase(app);
-  const auth = getAuth(app);
-  const chatListRef = ref(db, "chats");
-
+  
   useEffect(() => {
+    const app = initializeApp(firebaseConfig);
+    // Initialize Firebase
+    const db = getDatabase(app);
+    const auth = getAuth(app);
+    const chatListRef = ref(db, "chats");
     onChildAdded(chatListRef, (data) => {
       setChats((chats) => [...chats, data.val()]);
     });
