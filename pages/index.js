@@ -9,12 +9,18 @@ import { GoTrashcan } from "react-icons/go";
 import { FiEdit } from "react-icons/fi";
 import { Button, Modal, ModalFooter, ModalHeader, ModalBody } from "reactstrap";
 import Moment from "react-moment";
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+
+// Initialize Firebase
+
 export default function index() {
   const [data, setData] = useState([]);
   const [modal, setModal] = React.useState(false);
   const [info, setInfo] = useState([]);
+  
 
-  const [message, setMessage] = useState(null);
   const toggle = () => setModal(!modal);
 
   useEffect(() => {
@@ -31,7 +37,6 @@ export default function index() {
       .then((res) => console.log(res));
   };
 
-  console.log(info);
   const click = () => {
     let formData = new FormData();
     formData.append("name", info.name);

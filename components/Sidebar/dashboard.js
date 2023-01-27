@@ -8,6 +8,7 @@ import {
   FcConferenceCall,
   FcPuzzle,
   FcHome,
+  FcKindle,
 } from "react-icons/fc";
 const dashboard = () => {
   const router = useRouter();
@@ -63,6 +64,16 @@ const dashboard = () => {
               <FcPuzzle fontSize={35} />
             </span>
             <h5>Update</h5>
+          </div>
+        </div>
+      </div>
+      <div className={Styles.sidebar} onClick={() => router.push("/chat")}>
+        <div className="row ">
+          <div className="d-flex justify-content-between">
+            <span>
+              <FcKindle fontSize={35} />
+            </span>
+            <h5>Chat</h5>
           </div>
         </div>
       </div>
