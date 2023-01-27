@@ -109,6 +109,7 @@ const chat = () => {
                 className={Styles.msg_wrapper}
                 placeholder="enter mesage"
                 onChange={(e) => setMsg(e.target.value)}
+                value={msg}
               />{" "}
             </div>
             <div className="col-md-2">
